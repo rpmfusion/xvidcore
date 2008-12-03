@@ -1,0 +1,21 @@
+diff -up xvidcore/src/xvid.c.r xvidcore/src/xvid.c
+--- xvidcore/src/xvid.c.r	2008-11-30 17:38:31.000000000 +0100
++++ xvidcore/src/xvid.c	2008-12-03 00:47:15.000000000 +0100
+@@ -27,6 +27,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
++#ifndef _WIN32
++#include <unistd.h>
++#endif
+ 
+ #include "xvid.h"
+ #include "decoder.h"
+@@ -675,7 +678,6 @@ xvid_gbl_info(xvid_gbl_info_t * info)
+ 
+ #else
+ 
+-  #include <unistd.h>
+   info->num_threads = sysconf(_SC_NPROCESSORS_CONF);	
+ 
+ #endif
