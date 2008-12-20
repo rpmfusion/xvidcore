@@ -1,5 +1,5 @@
 Name:           xvidcore
-Version:        1.2.0
+Version:        1.2.1
 Release:        1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
@@ -7,7 +7,6 @@ Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
 Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}.tar.bz2
-Patch0:         %{name}-rpm.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %ifarch %{ix86} x86_64
@@ -35,7 +34,6 @@ documentation for the Xvid video codec.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 -b .r
 chmod -x examples/*.pl
 f=AUTHORS ; iconv -f iso-8859-1 -t utf-8 -o $f.utf8 $f && touch -r $f $f.utf8 && mv $f.utf8 $f
 # Yes, we want to see the build output.
@@ -83,6 +81,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Dec 20 2008 Dominik Mierzejewski <rpm at greysector.net> - 1.2.1-1
+- 1.2.1
+- drop upstreamed compilation fix
+
 * Wed Dec 03 2008 Dominik Mierzejewski <rpm at greysector.net> - 1.2.0-1
 - 1.2.0
 - drop upstreamed noexec stack patch
