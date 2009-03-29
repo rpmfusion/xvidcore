@@ -1,6 +1,6 @@
 Name:           xvidcore
 Version:        1.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -81,6 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.2.1-2
+- rebuild for new F11 features
+
 * Sat Dec 20 2008 Dominik Mierzejewski <rpm at greysector.net> - 1.2.1-1
 - 1.2.1
 - drop upstreamed compilation fix
