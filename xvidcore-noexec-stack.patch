@@ -1,6 +1,6 @@
 diff -up xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack xvidcore/src/bitstream/x86_asm/cbp_mmx.asm
---- xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/bitstream/x86_asm/cbp_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/bitstream/x86_asm/cbp_mmx.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -126,8 +126,4 @@ calc_cbp_mmx:
    ret
  ENDFUNC
@@ -12,8 +12,8 @@ diff -up xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack xvidcore/src/bi
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/bitstream/x86_asm/cbp_sse2.asm.noexec-stack xvidcore/src/bitstream/x86_asm/cbp_sse2.asm
---- xvidcore/src/bitstream/x86_asm/cbp_sse2.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/bitstream/x86_asm/cbp_sse2.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/bitstream/x86_asm/cbp_sse2.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/bitstream/x86_asm/cbp_sse2.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -116,8 +116,4 @@ calc_cbp_sse2:
    ret
  ENDFUNC
@@ -25,8 +25,8 @@ diff -up xvidcore/src/bitstream/x86_asm/cbp_sse2.asm.noexec-stack xvidcore/src/b
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm.noexec-stack xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm
---- xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -401,7 +401,4 @@ MAKE_FDCT_FUNC fdct_mmx_ffmpeg, FDCT_ROW
  
  MAKE_FDCT_FUNC fdct_xmm_ffmpeg, FDCT_ROW_XMM
@@ -37,8 +37,8 @@ diff -up xvidcore/src/dct/x86_asm/fdct_mmx_ffmpeg.asm.noexec-stack xvidcore/src/
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm.noexec-stack xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm
---- xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -500,7 +500,4 @@ MAKE_FDCT_FUNC fdct_mmx_skal, fMTX_MULT_
  
  MAKE_FDCT_FUNC fdct_xmm_skal, fMTX_MULT_XMM
@@ -49,11 +49,11 @@ diff -up xvidcore/src/dct/x86_asm/fdct_mmx_skal.asm.noexec-stack xvidcore/src/dc
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm.noexec-stack xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm
---- xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm	2009-09-21 10:39:24.000000000 +0200
-@@ -605,7 +605,4 @@ fdct_sse2_skal:
- ENDFUNC
- 
+--- xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm	2010-12-12 03:23:11.000000000 +0100
+@@ -608,7 +608,4 @@ ENDFUNC
+ ALIGN SECTION_ALIGN  
+   times 8 dw 0 
  
 -%ifidn __OUTPUT_FORMAT__,elf
 -section ".note.GNU-stack" noalloc noexec nowrite progbits
@@ -61,8 +61,8 @@ diff -up xvidcore/src/dct/x86_asm/fdct_sse2_skal.asm.noexec-stack xvidcore/src/d
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/idct_3dne.asm.noexec-stack xvidcore/src/dct/x86_asm/idct_3dne.asm
---- xvidcore/src/dct/x86_asm/idct_3dne.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/idct_3dne.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/dct/x86_asm/idct_3dne.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/idct_3dne.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -698,8 +698,4 @@ idct_3dne:
    ret
  ENDFUNC
@@ -74,8 +74,8 @@ diff -up xvidcore/src/dct/x86_asm/idct_3dne.asm.noexec-stack xvidcore/src/dct/x8
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/idct_mmx.asm.noexec-stack xvidcore/src/dct/x86_asm/idct_mmx.asm
---- xvidcore/src/dct/x86_asm/idct_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/idct_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/dct/x86_asm/idct_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/idct_mmx.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -608,8 +608,4 @@ idct_xmm:
      ret
  ENDFUNC
@@ -87,8 +87,8 @@ diff -up xvidcore/src/dct/x86_asm/idct_mmx.asm.noexec-stack xvidcore/src/dct/x86
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm.noexec-stack xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm
---- xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm	2010-12-12 03:21:50.000000000 +0100
 @@ -325,8 +325,4 @@ idct_sse2_dmitry:
    ret
  ENDFUNC
@@ -100,9 +100,9 @@ diff -up xvidcore/src/dct/x86_asm/idct_sse2_dmitry.asm.noexec-stack xvidcore/src
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm
---- xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm	2009-09-21 10:39:24.000000000 +0200
-@@ -514,8 +514,4 @@ MAKE_COLORSPACE  rgba_to_yv12_mmx,0,   4
+--- xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm	2010-12-12 03:21:51.000000000 +0100
+@@ -529,8 +529,4 @@ MAKE_COLORSPACE  rgba_to_yv12_mmx,0,   4
  MAKE_COLORSPACE  yv12_to_bgr_mmx,48,   3,8,2,  YV12_TO_BGR,  3, -1
  MAKE_COLORSPACE  yv12_to_bgra_mmx,48,  4,8,2,  YV12_TO_BGR,  4, -1
  
@@ -113,8 +113,8 @@ diff -up xvidcore/src/image/x86_asm/colorspace_rgb_mmx.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm
---- xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -474,7 +474,4 @@ MAKE_YV12_TO_YV12	yv12_to_yv12_mmx, 0
  
  MAKE_YV12_TO_YV12	yv12_to_yv12_xmm, 1
@@ -125,8 +125,8 @@ diff -up xvidcore/src/image/x86_asm/colorspace_yuv_mmx.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm
---- xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -341,7 +341,4 @@ MAKE_COLORSPACE  yv12_to_uyvy_mmx,0,    
  MAKE_COLORSPACE  yv12_to_yuyvi_mmx,0,   2,8,4,  YV12_TO_YUYVI, 0, -1
  MAKE_COLORSPACE  yv12_to_uyvyi_mmx,0,   2,8,4,  YV12_TO_YUYVI, 1, -1
@@ -137,8 +137,8 @@ diff -up xvidcore/src/image/x86_asm/colorspace_yuyv_mmx.asm.noexec-stack xvidcor
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/deintl_sse.asm.noexec-stack xvidcore/src/image/x86_asm/deintl_sse.asm
---- xvidcore/src/image/x86_asm/deintl_sse.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/deintl_sse.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/deintl_sse.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/deintl_sse.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -131,7 +131,4 @@ xvid_deinterlace_sse:
  ENDFUNC
  
@@ -149,8 +149,8 @@ diff -up xvidcore/src/image/x86_asm/deintl_sse.asm.noexec-stack xvidcore/src/ima
 -%endif
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/gmc_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/gmc_mmx.asm
---- xvidcore/src/image/x86_asm/gmc_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/gmc_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/gmc_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/gmc_mmx.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -220,7 +220,4 @@ xvid_GMC_Core_Lin_8_sse41:
  ENDFUNC
  
@@ -161,8 +161,8 @@ diff -up xvidcore/src/image/x86_asm/gmc_mmx.asm.noexec-stack xvidcore/src/image/
 -%endif
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm.noexec-stack xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm
---- xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -463,8 +463,4 @@ interpolate8x4_halfpel_hv_3dn:
    ret
  ENDFUNC
@@ -174,8 +174,8 @@ diff -up xvidcore/src/image/x86_asm/interpolate8x8_3dn.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm.noexec-stack xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm
---- xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -563,8 +563,4 @@ ALIGN SECTION_ALIGN
    ret
  ENDFUNC
@@ -187,8 +187,8 @@ diff -up xvidcore/src/image/x86_asm/interpolate8x8_3dne.asm.noexec-stack xvidcor
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm
---- xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -1328,8 +1328,4 @@ interpolate8x8_halfpel_hv_add_mmx:
    ret
  ENDFUNC
@@ -200,8 +200,8 @@ diff -up xvidcore/src/image/x86_asm/interpolate8x8_mmx.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm.noexec-stack xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm
---- xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -819,8 +819,4 @@ interpolate8x8_halfpel_hv_add_xmm:
    EPILOG
  ENDFUNC
@@ -213,8 +213,8 @@ diff -up xvidcore/src/image/x86_asm/interpolate8x8_xmm.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/postprocessing_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/postprocessing_mmx.asm
---- xvidcore/src/image/x86_asm/postprocessing_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/postprocessing_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/postprocessing_mmx.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/image/x86_asm/postprocessing_mmx.asm	2010-12-12 03:21:51.000000000 +0100
 @@ -114,7 +114,4 @@ image_brightness_mmx:
  ENDFUNC
  ;//////////////////////////////////////////////////////////////////////
@@ -225,8 +225,8 @@ diff -up xvidcore/src/image/x86_asm/postprocessing_mmx.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/postprocessing_sse2.asm.noexec-stack xvidcore/src/image/x86_asm/postprocessing_sse2.asm
---- xvidcore/src/image/x86_asm/postprocessing_sse2.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/postprocessing_sse2.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/postprocessing_sse2.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/image/x86_asm/postprocessing_sse2.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -130,7 +130,4 @@ image_brightness_sse2:
  ENDFUNC
  ;//////////////////////////////////////////////////////////////////////
@@ -237,8 +237,8 @@ diff -up xvidcore/src/image/x86_asm/postprocessing_sse2.asm.noexec-stack xvidcor
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/qpel_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/qpel_mmx.asm
---- xvidcore/src/image/x86_asm/qpel_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/qpel_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/qpel_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/qpel_mmx.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -1149,7 +1149,4 @@ ENDFUNC
  %undef SRC_PTR
  %undef DST_PTR
@@ -249,8 +249,8 @@ diff -up xvidcore/src/image/x86_asm/qpel_mmx.asm.noexec-stack xvidcore/src/image
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/image/x86_asm/reduced_mmx.asm.noexec-stack xvidcore/src/image/x86_asm/reduced_mmx.asm
---- xvidcore/src/image/x86_asm/reduced_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/image/x86_asm/reduced_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/image/x86_asm/reduced_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/image/x86_asm/reduced_mmx.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -985,8 +985,4 @@ ENDFUNC
  
    ; pfeewwww... Never Do That On Stage Again. :)
@@ -262,8 +262,8 @@ diff -up xvidcore/src/image/x86_asm/reduced_mmx.asm.noexec-stack xvidcore/src/im
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/motion/x86_asm/sad_3dn.asm.noexec-stack xvidcore/src/motion/x86_asm/sad_3dn.asm
---- xvidcore/src/motion/x86_asm/sad_3dn.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/motion/x86_asm/sad_3dn.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/motion/x86_asm/sad_3dn.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/motion/x86_asm/sad_3dn.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -216,8 +216,4 @@ sad8bi_3dn:
    ret
  ENDFUNC
@@ -275,8 +275,8 @@ diff -up xvidcore/src/motion/x86_asm/sad_3dn.asm.noexec-stack xvidcore/src/motio
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/motion/x86_asm/sad_3dne.asm.noexec-stack xvidcore/src/motion/x86_asm/sad_3dne.asm
---- xvidcore/src/motion/x86_asm/sad_3dne.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/motion/x86_asm/sad_3dne.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/motion/x86_asm/sad_3dne.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/motion/x86_asm/sad_3dne.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -490,8 +490,4 @@ ALIGN SECTION_ALIGN
    ret
  ENDFUNC
@@ -288,8 +288,8 @@ diff -up xvidcore/src/motion/x86_asm/sad_3dne.asm.noexec-stack xvidcore/src/moti
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/motion/x86_asm/sad_mmx.asm.noexec-stack xvidcore/src/motion/x86_asm/sad_mmx.asm
---- xvidcore/src/motion/x86_asm/sad_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/motion/x86_asm/sad_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/motion/x86_asm/sad_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/motion/x86_asm/sad_mmx.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -731,8 +731,4 @@ sse8_8bit_mmx:
    ret
  ENDFUNC
@@ -301,8 +301,8 @@ diff -up xvidcore/src/motion/x86_asm/sad_mmx.asm.noexec-stack xvidcore/src/motio
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/motion/x86_asm/sad_sse2.asm.noexec-stack xvidcore/src/motion/x86_asm/sad_sse2.asm
---- xvidcore/src/motion/x86_asm/sad_sse2.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/motion/x86_asm/sad_sse2.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/motion/x86_asm/sad_sse2.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/motion/x86_asm/sad_sse2.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -176,8 +176,4 @@ dev16_sse3:
    MEAN16_SSE2_SSE3 lddqu
  ENDFUNC
@@ -314,8 +314,8 @@ diff -up xvidcore/src/motion/x86_asm/sad_sse2.asm.noexec-stack xvidcore/src/moti
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/motion/x86_asm/sad_xmm.asm.noexec-stack xvidcore/src/motion/x86_asm/sad_xmm.asm
---- xvidcore/src/motion/x86_asm/sad_xmm.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/motion/x86_asm/sad_xmm.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/motion/x86_asm/sad_xmm.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/motion/x86_asm/sad_xmm.asm	2010-12-12 03:21:52.000000000 +0100
 @@ -436,8 +436,4 @@ sad16v_xmm:
    ret
  ENDFUNC
@@ -327,9 +327,9 @@ diff -up xvidcore/src/motion/x86_asm/sad_xmm.asm.noexec-stack xvidcore/src/motio
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/nasm.inc.noexec-stack xvidcore/src/nasm.inc
---- xvidcore/src/nasm.inc.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/nasm.inc	2009-09-21 10:39:24.000000000 +0200
-@@ -189,3 +189,12 @@ BITS 32
+--- xvidcore/src/nasm.inc.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/nasm.inc	2010-12-12 03:21:52.000000000 +0100
+@@ -203,3 +203,12 @@ BITS 32
  		%endif
  	%endif
  %endmacro
@@ -343,8 +343,8 @@ diff -up xvidcore/src/nasm.inc.noexec-stack xvidcore/src/nasm.inc
 +%endif
 +%endmacro
 diff -up xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm.noexec-stack xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm
---- xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -273,6 +273,4 @@ consim_mmx:
  	ret
  ENDFUNC
@@ -354,8 +354,8 @@ diff -up xvidcore/src/plugins/x86_asm/plugin_ssim-a.asm.noexec-stack xvidcore/sr
 -%endif
 +NON_EXEC_STACK
 diff -up xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm.noexec-stack xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm
---- xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -931,7 +931,4 @@ ALIGN SECTION_ALIGN
    ret
  ENDFUNC
@@ -366,8 +366,8 @@ diff -up xvidcore/src/quant/x86_asm/quantize_h263_3dne.asm.noexec-stack xvidcore
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm.noexec-stack xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm
---- xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -1070,8 +1070,4 @@ dequant_h263_inter_sse2:
    ret
  ENDFUNC
@@ -379,8 +379,8 @@ diff -up xvidcore/src/quant/x86_asm/quantize_h263_mmx.asm.noexec-stack xvidcore/
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm.noexec-stack xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm
---- xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -657,8 +657,4 @@ ALIGN SECTION_ALIGN
    ret
  ENDFUNC
@@ -392,8 +392,8 @@ diff -up xvidcore/src/quant/x86_asm/quantize_mpeg_mmx.asm.noexec-stack xvidcore/
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm.noexec-stack xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm
---- xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm.noexec-stack	2009-05-28 17:04:35.000000000 +0200
++++ xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -618,8 +618,4 @@ ALIGN SECTION_ALIGN
    ret
  ENDFUNC
@@ -405,8 +405,8 @@ diff -up xvidcore/src/quant/x86_asm/quantize_mpeg_xmm.asm.noexec-stack xvidcore/
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/utils/x86_asm/cpuid.asm.noexec-stack xvidcore/src/utils/x86_asm/cpuid.asm
---- xvidcore/src/utils/x86_asm/cpuid.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/utils/x86_asm/cpuid.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/utils/x86_asm/cpuid.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/utils/x86_asm/cpuid.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -240,7 +240,4 @@ ENDFUNC
  %endif
  
@@ -417,8 +417,8 @@ diff -up xvidcore/src/utils/x86_asm/cpuid.asm.noexec-stack xvidcore/src/utils/x8
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/utils/x86_asm/interlacing_mmx.asm.noexec-stack xvidcore/src/utils/x86_asm/interlacing_mmx.asm
---- xvidcore/src/utils/x86_asm/interlacing_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/utils/x86_asm/interlacing_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/utils/x86_asm/interlacing_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/utils/x86_asm/interlacing_mmx.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -198,8 +198,4 @@ MBFieldTest_mmx:
    ret
  ENDFUNC
@@ -430,8 +430,8 @@ diff -up xvidcore/src/utils/x86_asm/interlacing_mmx.asm.noexec-stack xvidcore/sr
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm.noexec-stack xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm
---- xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -465,8 +465,4 @@ transfer8x4_copy_3dne:
    ret
  ENDFUNC
@@ -443,8 +443,8 @@ diff -up xvidcore/src/utils/x86_asm/mem_transfer_3dne.asm.noexec-stack xvidcore/
 -
 +NON_EXEC_STACK
 diff -up xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm.noexec-stack xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm
---- xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm.noexec-stack	2009-09-21 10:39:07.000000000 +0200
-+++ xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm	2009-09-21 10:39:24.000000000 +0200
+--- xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
++++ xvidcore/src/utils/x86_asm/mem_transfer_mmx.asm	2010-12-12 03:21:53.000000000 +0100
 @@ -588,8 +588,4 @@ transfer8x4_copy_mmx:
    ret
  ENDFUNC

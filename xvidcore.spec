@@ -1,13 +1,13 @@
 Name:           xvidcore
-Version:        1.2.1
-Release:        3%{?dist}
+Version:        1.2.2
+Release:        1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
 Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}.tar.bz2
-Patch0:         xvidcore-1.2.1-noexec-stack.patch
+Patch0:         xvidcore-noexec-stack.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %ifarch %{ix86} x86_64
@@ -83,6 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Dec 11 2010 Dominik Mierzejewski <rpm at greysector.net> - 1.2.2-1
+- 1.2.2
+- rebase noexec-stack patch
+
 * Mon Sep 21 2009 Hans de Goede <j.w.r.degoede@hhs.nl> - 1.2.1-3
 - Do not require an executable stack on x86_64 (rf743, rf733)
 
