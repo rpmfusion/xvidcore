@@ -1,6 +1,6 @@
 Name:           xvidcore
 Version:        1.2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -44,7 +44,6 @@ f=AUTHORS ; iconv -f iso-8859-1 -t utf-8 -o $f.utf8 $f && touch -r $f $f.utf8 &&
 
 %build
 cd build/generic
-export CFLAGS="$RPM_OPT_FLAGS -ffast-math"
 %configure
 make %{?_smp_mflags} 
 cd -
@@ -83,6 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jan 10 2011 Dominik Mierzejewski <rpm at greysector.net> - 1.2.2-2
+- fix noexec stack issue on i686 (bug #1560)
+- drop non-standard CFLAGS addition
+
 * Sat Dec 11 2010 Dominik Mierzejewski <rpm at greysector.net> - 1.2.2-1
 - 1.2.2
 - rebase noexec-stack patch

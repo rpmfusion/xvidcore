@@ -1,3 +1,27 @@
+diff -up xvidcore/build/generic/configure.in.noexec xvidcore/build/generic/configure.in
+--- xvidcore/build/generic/configure.in.noexec	2010-12-31 11:53:22.000000000 +0100
++++ xvidcore/build/generic/configure.in	2011-01-10 20:13:36.000000000 +0100
+@@ -271,7 +271,7 @@ case "$target_os" in
+ 	AC_MSG_RESULT([ok])
+ 	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
+ 	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
+-	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -Wl,--version-script=libxvidcore.ld -lc -lm"
++	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -Wl,--version-script=libxvidcore.ld,-z,noexecstack -lc -lm"
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;
+      *bsd*|irix*)
+diff -up xvidcore/build/generic/configure.noexec xvidcore/build/generic/configure
+--- xvidcore/build/generic/configure.noexec	2010-12-31 11:53:22.000000000 +0100
++++ xvidcore/build/generic/configure	2011-01-10 20:13:49.000000000 +0100
+@@ -3851,7 +3851,7 @@ case "$target_os" in
+ echo "${ECHO_T}ok" >&6
+ 	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
+ 	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
+-	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -Wl,--version-script=libxvidcore.ld -lc -lm"
++	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -Wl,--version-script=libxvidcore.ld,-z,noexecstack -lc -lm"
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;
+      *bsd*|irix*)
 diff -up xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack xvidcore/src/bitstream/x86_asm/cbp_mmx.asm
 --- xvidcore/src/bitstream/x86_asm/cbp_mmx.asm.noexec-stack	2009-05-28 10:42:37.000000000 +0200
 +++ xvidcore/src/bitstream/x86_asm/cbp_mmx.asm	2010-12-12 03:21:50.000000000 +0100
