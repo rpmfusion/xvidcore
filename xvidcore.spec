@@ -1,13 +1,14 @@
+%global pre -rc1
+
 Name:           xvidcore
-Version:        1.2.2
-Release:        1%{?dist}
+Version:        1.3.0
+Release:        0.1.rc1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
-Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}.tar.bz2
-Patch0:         xvidcore-noexec-stack.patch
+Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{pre}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %ifarch %{ix86} x86_64
@@ -35,7 +36,6 @@ documentation for the Xvid video codec.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 -z .noexec-stack
 chmod -x examples/*.pl
 f=AUTHORS ; iconv -f iso-8859-1 -t utf-8 -o $f.utf8 $f && touch -r $f $f.utf8 && mv $f.utf8 $f
 # Yes, we want to see the build output.
@@ -83,6 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Jan 10 2011 Dominik Mierzejewski <rpm at greysector.net> - 1.3.0-0.1.rc1
+- 1.3.0-rc1
+- drop upstreamed noexec stack patch
+
 * Sat Dec 11 2010 Dominik Mierzejewski <rpm at greysector.net> - 1.2.2-1
 - 1.2.2
 - rebase noexec-stack patch
