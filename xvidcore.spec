@@ -1,14 +1,14 @@
-%global pre -rc1
+#global pre -rc1
 
 Name:           xvidcore
-Version:        1.3.0
-Release:        0.1.rc1%{?dist}
+Version:        1.3.2
+Release:        1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
-Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{pre}.tar.bz2
+Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{?pre}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %ifarch %{ix86} x86_64
@@ -83,6 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Jun 12 2011 Nicolas Chauvet <kwizart@gmail.com> - 1.3.2-1
+- Update to 1.3.2
+
 * Mon Jan 10 2011 Dominik Mierzejewski <rpm at greysector.net> - 1.3.0-0.1.rc1
 - 1.3.0-rc1
 - drop upstreamed noexec stack patch
