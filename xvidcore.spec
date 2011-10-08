@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.2
-Release:        2%{?dist}
+Release:        2%{?dist}.1
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -83,6 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Oct 08 2011 Nicolas Chauvet <kwizart@gmail.com> - 1.3.2-2.1
+- Rebuilt for target i686
+
 * Sun Jun 12 2011 Nicolas Chauvet <kwizart@gmail.com> - 1.3.2-2
 - Update to 1.3.2
 
