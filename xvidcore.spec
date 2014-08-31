@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.2
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -83,6 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 1.3.2-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Wed Mar 20 2013 Nicolas Chauvet <kwizart@gmail.com> - 1.3.2-5
 - Mass rebuilt for Fedora 19 Features
 
