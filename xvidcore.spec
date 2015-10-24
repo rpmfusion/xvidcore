@@ -1,15 +1,14 @@
 #global pre -rc1
 
 Name:           xvidcore
-Version:        1.3.2
-Release:        6%{?dist}
+Version:        1.3.4
+Release:        1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
 Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{?pre}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %ifarch %{ix86} x86_64
 BuildRequires:  nasm >= 2.0
@@ -61,28 +60,25 @@ ln -s libxvidcore.so.? libxvidcore.so
 cd -
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 
 %files
-%defattr(-,root,root,-)
 %doc LICENSE README AUTHORS ChangeLog
 %{_libdir}/libxvidcore.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %doc CodingStyle TODO examples/
 %{_includedir}/xvid.h
 %{_libdir}/libxvidcore.so
 
 
 %changelog
+* Sat Oct 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 1.3.4-1
+- Update to 1.3.4
+
 * Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 1.3.2-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
