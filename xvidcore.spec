@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -53,11 +53,7 @@ cd -
 rm -rf $RPM_BUILD_ROOT
 make -C build/generic install DESTDIR=$RPM_BUILD_ROOT
 rm $RPM_BUILD_ROOT%{_libdir}/libxvidcore.a
-cd $RPM_BUILD_ROOT%{_libdir}
-chmod 755 libxvidcore.so*
-/sbin/ldconfig -n .
-ln -s libxvidcore.so.? libxvidcore.so
-cd -
+chmod 755 $RPM_BUILD_ROOT%{_libdir}/libxvidcore.so.*
 
 
 %post -p /sbin/ldconfig
@@ -76,6 +72,9 @@ cd -
 
 
 %changelog
+* Sun Oct 25 2015 Dominik Mierzejewski <rpm at greysector.net> - 1.3.4-2
+- using ldconfig to generate correct so filename is no longer needed
+
 * Sat Oct 24 2015 Nicolas Chauvet <kwizart@gmail.com> - 1.3.4-1
 - Update to 1.3.4
 
