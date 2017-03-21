@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.4
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -10,6 +10,7 @@ License:        GPLv2+
 URL:            http://www.xvid.org/
 Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{?pre}.tar.bz2
 
+BuildRequires:  perl-generators
 %ifarch %{ix86} x86_64
 BuildRequires:  nasm >= 2.0
 %endif
@@ -72,6 +73,9 @@ chmod 755 $RPM_BUILD_ROOT%{_libdir}/libxvidcore.so.*
 
 
 %changelog
+* Tue Mar 21 2017 Leigh Scott <leigh123linux@googlemail.com> - 1.3.4-4
+- rebuilt
+
 * Tue Mar 21 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.3.4-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
