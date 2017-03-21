@@ -38,7 +38,7 @@ documentation for the Xvid video codec.
 chmod -x examples/*.pl
 f=AUTHORS ; iconv -f iso-8859-1 -t utf-8 -o $f.utf8 $f && touch -r $f $f.utf8 && mv $f.utf8 $f
 # Yes, we want to see the build output.
-%{__perl} -pi -e 's/^\t@(?!echo\b)/\t/' build/generic/Makefile
+#{__perl} -pi -e 's/^\t@(?!echo\b)/\t/' build/generic/Makefile
 
 
 %build
