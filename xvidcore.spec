@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.4
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 
 Group:          System Environment/Libraries
@@ -72,6 +72,9 @@ chmod 755 $RPM_BUILD_ROOT%{_libdir}/libxvidcore.so.*
 
 
 %changelog
+* Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1.3.4-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.3.4-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
