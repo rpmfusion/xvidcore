@@ -1,14 +1,12 @@
 #global pre -rc1
 
 Name:           xvidcore
-Version:        1.3.4
-Release:        5%{?dist}
+Version:        1.3.5
+Release:        1%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
-
-Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.xvid.org/
-Source0:        http://downloads.xvid.org/downloads/xvidcore-%{version}%{?pre}.tar.bz2
+Source0:        http://downloads.xvid.org/downloads/%{name}-%{version}%{?pre}.tar.bz2
 
 %ifarch %{ix86} x86_64
 BuildRequires:  nasm >= 2.0
@@ -25,8 +23,7 @@ many more.
 
 %package        devel
 Summary:        Development files for the Xvid video codec
-Group:          Development/Libraries
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name}%{_isa} = %{version}-%{release}
 
 %description    devel
 This package contains header files, static library and API
@@ -34,35 +31,42 @@ documentation for the Xvid video codec.
 
 
 %prep
-%setup -q -n %{name}
+%autosetup -n %{name}
 chmod -x examples/*.pl
-f=AUTHORS ; iconv -f iso-8859-1 -t utf-8 -o $f.utf8 $f && touch -r $f $f.utf8 && mv $f.utf8 $f
+# Convert to utf-8
+for file in AUTHORS ChangeLog; do
+    iconv -f ISO-8859-1 -t UTF-8 -o $file.new $file && \
+    touch -r $file $file.new && \
+    mv $file.new $file
+done
+# Fix rpmlint wrong-file-end-of-line-encoding
+for file in ChangeLog; do
+ sed "s|\r||g" $file > $file.new && \
+ touch -r $file $file.new && \
+ mv $file.new $file
+done
 # Yes, we want to see the build output.
-#{__perl} -pi -e 's/^\t@(?!echo\b)/\t/' build/generic/Makefile
-
+%{__sed} -i -e 's|@$(|$(|g' build/generic/Makefile
+# Fix permissions
+%{__sed} -i -e 's|644 $(BUILD_DIR)/$(SHARED_LIB)|755 $(BUILD_DIR)/$(SHARED_LIB)|g' build/generic/Makefile
 
 %build
 cd build/generic
-export CFLAGS="$RPM_OPT_FLAGS -ffast-math"
 %configure
-make %{?_smp_mflags} 
-cd -
+%make_build
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make -C build/generic install DESTDIR=$RPM_BUILD_ROOT
-rm $RPM_BUILD_ROOT%{_libdir}/libxvidcore.a
-chmod 755 $RPM_BUILD_ROOT%{_libdir}/libxvidcore.so.*
+%make_install -C build/generic
+find %{buildroot} -name "*.a" -delete
 
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
+%ldconfig_scriptlets
 
 
 %files
-%doc LICENSE README AUTHORS ChangeLog
+%doc README AUTHORS ChangeLog
+%license LICENSE
 %{_libdir}/libxvidcore.so.*
 
 %files devel
@@ -72,6 +76,9 @@ chmod 755 $RPM_BUILD_ROOT%{_libdir}/libxvidcore.so.*
 
 
 %changelog
+* Tue Mar 06 2018 Leigh Scott <leigh123linux@googlemail.com> - 1.3.5-1
+- Update to 1.3.5
+
 * Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1.3.4-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
