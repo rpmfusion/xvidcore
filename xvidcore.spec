@@ -2,12 +2,14 @@
 
 Name:           xvidcore
 Version:        1.3.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 License:        GPLv2+
 URL:            http://www.xvid.org/
 Source0:        http://downloads.xvid.org/downloads/%{name}-%{version}%{?pre}.tar.bz2
+Patch0:         xvidcore-check_cpu_features-crash.patch
 
+BuildRequires:  gcc
 %ifarch %{ix86} x86_64
 BuildRequires:  nasm >= 2.0
 %endif
@@ -31,7 +33,7 @@ documentation for the Xvid video codec.
 
 
 %prep
-%autosetup -n %{name}
+%autosetup -p1 -n %{name}
 chmod -x examples/*.pl
 # Convert to utf-8
 for file in AUTHORS ChangeLog; do
@@ -76,6 +78,10 @@ find %{buildroot} -name "*.a" -delete
 
 
 %changelog
+* Thu Jan 17 2019 Dominik Mierzejewski <rpm at greysector.net> - 1.3.5-4
+- fix crash in check_cpu_features (rfbz#5141), patch by Peter Ross
+- add missing BR: gcc
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 1.3.5-3
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
