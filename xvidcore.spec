@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.5
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 License:        GPLv2+
 URL:            http://www.xvid.org/
@@ -78,6 +78,9 @@ find %{buildroot} -name "*.a" -delete
 
 
 %changelog
+* Tue Mar 05 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.3.5-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Thu Jan 17 2019 Dominik Mierzejewski <rpm at greysector.net> - 1.3.5-4
 - fix crash in check_cpu_features (rfbz#5141), patch by Peter Ross
 - add missing BR: gcc
