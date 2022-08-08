@@ -2,7 +2,7 @@
 
 Name:           xvidcore
 Version:        1.3.7
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        MPEG-4 Simple and Advanced Simple Profile codec
 License:        GPLv2+
 URL:            https://www.xvid.com/
@@ -77,6 +77,10 @@ find %{buildroot} -name "*.a" -delete
 
 
 %changelog
+* Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.3.7-8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
+  5.1
+
 * Wed Feb 09 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.3.7-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
